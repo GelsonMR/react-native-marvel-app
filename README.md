@@ -8,3 +8,18 @@ Everything was made based on the [prototype made on Adobe XD](https://xd.adobe.c
  - [ ] Character list
  - [ ] Character search
  - [ ] Character info
+
+## Running the project
+First, make sure you have what [everything you need](https://reactnative.dev/docs/getting-started) to run a react-native app using the CLI.
+
+After that you only need to install the dependencies using:
+
+```
+npm install
+```
+
+And run it with:
+
+```
+react-native run-android
+```
