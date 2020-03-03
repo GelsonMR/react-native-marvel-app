@@ -1,9 +1,7 @@
 const TEXT = {
-  sizes: {
-    title: 20,
-  },
-  family: {
-    title: 'BackIssuesBB-Italic',
+  title: {
+    size: 20,
+    fontFamily: 'BackIssuesBB-Italic',
   },
 };
 
