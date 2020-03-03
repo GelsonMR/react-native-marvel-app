@@ -1,7 +1,8 @@
 import { StyleSheet } from 'react-native';
+import BORDER from '../../utilities/border';
 import COLORS from '../../utilities/colors';
 import SPACING from '../../utilities/spacing';
-import BORDER from '../../utilities/border';
+import TEXT from '../../utilities/text';
 
 export default StyleSheet.create({
   background: {
@@ -20,7 +21,7 @@ export default StyleSheet.create({
     width: 'auto',
   },
   text: {
-    fontFamily: 'BackIssuesBB-Italic',
-    fontSize: 20,
+    fontFamily: TEXT.title.fontFamily,
+    fontSize: TEXT.title.size,
   },
 });
