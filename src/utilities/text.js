@@ -3,6 +3,10 @@ const TEXT = {
     size: 20,
     fontFamily: 'BackIssuesBB-Italic',
   },
+  balloon: {
+    size: 12,
+    fontFamily: 'BackIssuesBB-Italic',
+  },
 };
 
 export default TEXT;
