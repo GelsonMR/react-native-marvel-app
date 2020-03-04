@@ -5,6 +5,7 @@ import {
   StatusBar,
   FlatList,
 } from 'react-native';
+import { useDebouncedCallback } from 'use-debounce';
 
 import InputText from '../../components/TextInput';
 import CharacterTile from '../../components/CharacterTile';
@@ -24,8 +25,6 @@ const CharactersScreen = () => {
 
   async function fetchCharacters(params = {}) {
     let response;
-    setLoading(true);
-    setError(null);
     if (!params.offset) {
       if (flatListRef) {
         flatListRef.scrollToOffset({ animated: false, offset: 0 });
@@ -48,8 +47,21 @@ const CharactersScreen = () => {
     setLoading(false);
   }
 
+  const [debouncedFetchCharacters] = useDebouncedCallback(
+    (params) => {
+      fetchCharacters(params);
+    },
+    500,
+  );
+
+  const prepareFetchCharacters = (params) => {
+    setLoading(true);
+    setError(null);
+    debouncedFetchCharacters(params);
+  };
+
   useEffect(() => {
-    fetchCharacters();
+    prepareFetchCharacters();
   }, []);
 
   return (
@@ -61,14 +73,14 @@ const CharactersScreen = () => {
       <InputText
         placeholder="Search by character name"
         onChangeText={(text) => {
-          fetchCharacters(text ? { nameStartsWith: text } : {});
+          prepareFetchCharacters(text ? { nameStartsWith: text } : {});
         }}
         style={STYLES.inputText}
       />
       <FlatList
         ref={(ref) => { flatListRef = ref; }}
         refreshing={isLoading}
-        onRefresh={() => fetchCharacters()}
+        onRefresh={() => prepareFetchCharacters()}
         onEndReached={async () => {
           if (
             !isLoading
@@ -76,7 +88,7 @@ const CharactersScreen = () => {
             && characters.length
             && !isAllLoaded
           ) {
-            await fetchCharacters({ offset: characters.length });
+            await prepareFetchCharacters({ offset: characters.length });
           }
         }}
         onEndReachedThreshold={0.5}
@@ -99,7 +111,6 @@ const CharactersScreen = () => {
             />
           );
         }}
-        scrollEnabled={!isAllLoaded}
         ListFooterComponent={() => {
           if (hasError) {
             return (
@@ -133,10 +144,17 @@ const CharactersScreen = () => {
               </View>
             );
           }
+          if (!characters.length) {
+            return (
+              <View style={STYLES.footer}>
+                <Text style={STYLES.text}>No characters found</Text>
+              </View>
+            );
+          }
           return (
             <View style={STYLES.footer}>
               <View style={STYLES.balloon}>
-                <Text style={STYLES.text}>Fim</Text>
+                <Text style={STYLES.text}>The end</Text>
               </View>
             </View>
           );
