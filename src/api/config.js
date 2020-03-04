@@ -9,7 +9,7 @@ export default {
       enabled: Config.ENV === 'mock',
       timeout: 2000,
     },
-    host: 'Config.API_HOST',
+    host: Config.API_HOST,
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
@@ -17,7 +17,7 @@ export default {
     params: () => {
       const ts = Date.now();
       const apikey = Config.PUBLIC_KEY;
-      const hash = md5(`a${ts}${Config.PRIVATE_KEY}${apikey}`);
+      const hash = md5(`${ts}${Config.PRIVATE_KEY}${apikey}`);
 
       return {
         ts,
