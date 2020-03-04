@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -9,26 +9,51 @@ import PropTypes from 'prop-types';
 
 import STYLES from './styles';
 
+let inputRef;
+
 const TextInput = ({
+  value,
+  onChangeText,
   style,
   placeholder,
-}) => (
-  <View style={[STYLES.background, style]}>
-    <View style={STYLES.placeholderContainer}>
-      <Text style={STYLES.placeholder}>{placeholder}</Text>
+}) => {
+  const [inputValue, setInputValue] = useState('');
+
+  return (
+    <View style={[STYLES.background, style]}>
+      <RNTextInput
+        ref={(input) => { inputRef = input; }}
+        value={value}
+        onChangeText={(text) => {
+          setInputValue(text);
+          onChangeText(text);
+        }}
+        placeholder={placeholder}
+        style={STYLES.textInput}
+      />
+      {
+        !!inputValue && (
+          <TouchableNativeFeedback
+            onPress={() => {
+              const text = '';
+              inputRef.clear();
+              setInputValue(text);
+              onChangeText(text);
+            }}
+          >
+            <View style={STYLES.buttonContainer}>
+              <Text style={STYLES.buttonText}>Clear</Text>
+            </View>
+          </TouchableNativeFeedback>
+        )
+      }
     </View>
-    <RNTextInput
-      style={STYLES.textInput}
-    />
-    <TouchableNativeFeedback>
-      <View style={STYLES.buttonContainer}>
-        <Text style={STYLES.buttonText}>Clear</Text>
-      </View>
-    </TouchableNativeFeedback>
-  </View>
-);
+  );
+};
 
 TextInput.propTypes = {
+  value: PropTypes.string,
+  onChangeText: PropTypes.func,
   style: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.number,
@@ -43,6 +68,8 @@ TextInput.propTypes = {
 };
 
 TextInput.defaultProps = {
+  value: null,
+  onChangeText: () => {},
   style: null,
   placeholder: null,
 };

@@ -14,20 +14,6 @@ export default StyleSheet.create({
     zIndex: 1,
     flexDirection: 'row',
   },
-  placeholderContainer: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    justifyContent: 'center',
-  },
-  placeholder: {
-    marginLeft: SPACING.medium,
-    fontFamily: TEXT.input.fontFamily,
-    fontSize: TEXT.input.size,
-    color: COLORS.placeholderText,
-  },
   textInput: {
     paddingLeft: SPACING.medium,
     fontFamily: TEXT.input.fontFamily,
