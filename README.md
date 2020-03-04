@@ -18,6 +18,14 @@ After that you only need to install the dependencies using:
 npm install
 ```
 
+Then add a `.env` file on the root of the project with the variables:
+
+```
+ENV=production
+API_HOST=https://gateway.marvel.com:443/v1/public
+PUBLIC_KEY=***
+PRIVATE_KEY=***
+```
 And run it with:
 
 ```
