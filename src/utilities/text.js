@@ -7,6 +7,10 @@ const TEXT = {
     size: 16,
     fontFamily: 'BackIssuesBB-Italic',
   },
+  default: {
+    size: 16,
+    fontFamily: 'BackIssuesBB',
+  },
   balloon: {
     size: 12,
     fontFamily: 'BackIssuesBB-Italic',
