@@ -6,7 +6,7 @@ import {
   FlatList,
 } from 'react-native';
 
-import InputText from '../../components/InputText';
+import InputText from '../../components/TextInput';
 import CharacterTile from '../../components/CharacterTile';
 import COLORS from '../../utilities/colors';
 import STYLES from './styles';
@@ -58,7 +58,10 @@ const CharactersScreen = () => {
         backgroundColor={COLORS.pageBackground}
         barStyle="dark-content"
       />
-      <InputText style={STYLES.inputText} />
+      <InputText
+        placeholder="Search by character name"
+        style={STYLES.inputText}
+      />
       <FlatList
         ref={(ref) => { flatListRef = ref; }}
         refreshing={isLoading}
