@@ -1,5 +1,10 @@
 import React from 'react';
-import { View, Text, TextInput as RNTextInput } from 'react-native';
+import {
+  View,
+  Text,
+  TouchableNativeFeedback,
+  TextInput as RNTextInput,
+} from 'react-native';
 import PropTypes from 'prop-types';
 
 import STYLES from './styles';
@@ -12,7 +17,14 @@ const TextInput = ({
     <View style={STYLES.placeholderContainer}>
       <Text style={STYLES.placeholder}>{placeholder}</Text>
     </View>
-    <RNTextInput style={STYLES.textInput} />
+    <RNTextInput
+      style={STYLES.textInput}
+    />
+    <TouchableNativeFeedback>
+      <View style={STYLES.buttonContainer}>
+        <Text style={STYLES.buttonText}>Clear</Text>
+      </View>
+    </TouchableNativeFeedback>
   </View>
 );
 

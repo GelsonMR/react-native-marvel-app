@@ -12,6 +12,7 @@ export default StyleSheet.create({
     borderRadius: BORDER.radius,
     marginBottom: SPACING.medium,
     zIndex: 1,
+    flexDirection: 'row',
   },
   placeholderContainer: {
     position: 'absolute',
@@ -29,6 +30,18 @@ export default StyleSheet.create({
   },
   textInput: {
     paddingLeft: SPACING.medium,
+    fontFamily: TEXT.input.fontFamily,
+    fontSize: TEXT.input.size,
+    flex: 1,
+  },
+  buttonContainer: {
+    flex: 0,
+    justifyContent: 'center',
+    paddingLeft: SPACING.medium,
+    paddingRight: SPACING.medium,
+  },
+  buttonText: {
+    color: COLORS.link,
     fontFamily: TEXT.input.fontFamily,
     fontSize: TEXT.input.size,
   },
