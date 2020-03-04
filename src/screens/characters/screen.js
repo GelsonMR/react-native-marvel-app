@@ -60,6 +60,9 @@ const CharactersScreen = () => {
       />
       <InputText
         placeholder="Search by character name"
+        onChangeText={(text) => {
+          fetchCharacters(text ? { nameStartsWith: text } : {});
+        }}
         style={STYLES.inputText}
       />
       <FlatList
