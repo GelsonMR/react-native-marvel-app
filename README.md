@@ -5,8 +5,8 @@ Everything was made based on the [prototype made on Adobe XD](https://xd.adobe.c
 
 ## Features
  - [ ] A cool splash screen
- - [ ] Character list
- - [ ] Character search
+ - [X] Character list
+ - [X] Character search
  - [ ] Character info
 
 ## Running the project
