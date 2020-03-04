@@ -4,5 +4,8 @@ module.exports = {
   rules: {
     'react/jsx-filename-extension': ['off'],
     'linebreak-style': 0,
-  }
+  },
+  globals: {
+    fetch: false,
+  },
 };
