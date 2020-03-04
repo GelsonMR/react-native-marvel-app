@@ -14,4 +14,10 @@ export default StyleSheet.create({
     left: SPACING.medium,
     right: SPACING.medium,
   },
+  tile: {
+    marginBottom: SPACING.medium,
+  },
+  tileRight: {
+    marginLeft: SPACING.medium,
+  },
 });
