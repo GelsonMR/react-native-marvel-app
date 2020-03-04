@@ -11,6 +11,7 @@ export default StyleSheet.create({
     borderColor: COLORS.black,
     aspectRatio: 1,
     flex: 1,
+    backgroundColor: COLORS.white,
   },
   image: {
     width: '100%',

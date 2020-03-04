@@ -10,11 +10,13 @@ const HeroTile = ({
   style,
 }) => (
   <View style={[STYLES.container, style]}>
-    <Image
-      source={source}
-      style={STYLES.image}
-      resizeMode="cover"
-    />
+    {source && (
+      <Image
+        source={source}
+        style={STYLES.image}
+        resizeMode="cover"
+      />
+    )}
     <View style={STYLES.balloon}>
       <Text style={STYLES.text}>{name}</Text>
     </View>
