@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import STYLES from './styles';
 
-const HeroTile = ({
+const CharacterTile = ({
   source,
   name,
   style,
@@ -23,7 +23,7 @@ const HeroTile = ({
   </View>
 );
 
-HeroTile.propTypes = {
+CharacterTile.propTypes = {
   style: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.number,
@@ -43,9 +43,9 @@ HeroTile.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-HeroTile.defaultProps = {
+CharacterTile.defaultProps = {
   style: null,
   source: null,
 };
 
-export default HeroTile;
+export default CharacterTile;
