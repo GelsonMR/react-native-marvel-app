@@ -22,7 +22,7 @@ const Header = (props) => {
         {
           previous
             ? (
-              <TouchableNativeFeedback onPress={() => navigation.goBack()}>
+              <TouchableNativeFeedback onPress={navigation.goBack}>
                 <View style={STYLES.background}>
                   <Text style={STYLES.text}>{'< BACK'}</Text>
                 </View>
