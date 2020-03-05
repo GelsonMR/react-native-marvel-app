@@ -80,6 +80,7 @@ export default StyleSheet.create({
   },
   comicsListContainer: {
     paddingRight: SPACING.medium,
+    minHeight: 100,
   },
   comicTile: {
     marginLeft: SPACING.medium,
