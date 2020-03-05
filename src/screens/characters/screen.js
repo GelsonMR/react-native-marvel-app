@@ -6,6 +6,7 @@ import {
   FlatList,
 } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
+import PropTypes from 'prop-types';
 
 import InputText from '../../components/TextInput';
 import CharacterTile from '../../components/CharacterTile';
@@ -15,7 +16,7 @@ import Api from '../../api';
 
 const defaultAvatar = require('../../../assets/images/default-avatar.png');
 
-const CharactersScreen = () => {
+const CharactersScreen = ({ navigation }) => {
   let flatListRef;
   const [characters, setCharacters] = useState([]);
   const [isLoading, setLoading] = useState(false);
@@ -104,6 +105,11 @@ const CharactersScreen = () => {
             <CharacterTile
               name={item.name}
               source={source}
+              onPress={() => {
+                navigation.push('Detail', {
+                  character: item,
+                });
+              }}
               style={[
                 STYLES.tile,
                 !(index % 2) ? STYLES.tileLeft : null,
@@ -126,7 +132,7 @@ const CharactersScreen = () => {
                   isLoading
                 ) && (
                   [...Array(characters.length ? 2 : 3)].map((item, index) => (
-                    <View style={STYLES.row} index={index.toString()}>
+                    <View style={STYLES.row} key={index.toString()}>
                       <CharacterTile
                         name="Loading"
                         style={[
@@ -164,6 +170,12 @@ const CharactersScreen = () => {
       />
     </>
   );
+};
+
+CharactersScreen.propTypes = {
+  navigation: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
 export default CharactersScreen;
