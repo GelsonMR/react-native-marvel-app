@@ -70,7 +70,7 @@ const DetailScreen = ({ route }) => {
           </View>
         </View>
         <View style={STYLES.descriptionContainer}>
-          <Text style={STYLES.descriptionText}>{character.description}</Text>
+          <Text style={STYLES.descriptionText}>{character.description || 'No description avaiable.'}</Text>
         </View>
         <View style={STYLES.comicsTitleContainer}>
           <Text style={STYLES.comicsTitle}>
