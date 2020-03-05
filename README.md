@@ -7,7 +7,7 @@ Everything was made based on the [prototype made on Adobe XD](https://xd.adobe.c
  - [ ] A cool splash screen
  - [X] Character list
  - [X] Character search
- - [ ] Character info
+ - [X] Character info
 
 ## Running the project
 First, make sure you have what [everything you need](https://reactnative.dev/docs/getting-started) to run a react-native app using the CLI.
