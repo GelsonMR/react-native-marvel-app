@@ -37,6 +37,7 @@ const TextInput = ({
             onPress={() => {
               const text = '';
               inputRef.clear();
+              inputRef.focus();
               setInputValue(text);
               onChangeText(text);
             }}
