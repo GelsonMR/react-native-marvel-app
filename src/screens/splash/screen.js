@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Text,
   View,
@@ -13,12 +13,14 @@ import COLORS from '../../utilities/colors';
 const marvelLogo = require('../../../assets/images/marvel-logo.png');
 
 const SplashScreen = ({ navigation }) => {
-  setTimeout(() => {
-    navigation.reset({
-      index: 0,
-      routes: [{ name: 'Characters' }],
-    });
-  }, 4000);
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.reset({
+        index: 0,
+        routes: [{ name: 'Characters' }],
+      });
+    }, 4000);
+  }, []);
 
   return (
     <>
