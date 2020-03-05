@@ -15,6 +15,10 @@ const TEXT = {
     size: 12,
     fontFamily: 'BackIssuesBB-Italic',
   },
+  credits: {
+    size: 12,
+    fontFamily: 'BackIssuesBB',
+  },
 };
 
 export default TEXT;
