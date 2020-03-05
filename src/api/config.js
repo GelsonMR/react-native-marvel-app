@@ -2,6 +2,7 @@ import Config from 'react-native-config';
 import md5 from 'md5';
 
 const charactersMock = require('../../mocks/charactersSuccessResponse.json');
+const characterComicsMock = require('../../mocks/characterComicsSuccessResponse.json');
 
 export default {
   MARVEL: {
@@ -31,9 +32,10 @@ export default {
         method: 'GET',
         responseMock: charactersMock,
       },
-      getCharacterDetail: {
-        endpoint: '/characters/:id',
+      getCharacterComics: {
+        endpoint: '/characters/:id/comics',
         method: 'GET',
+        responseMock: characterComicsMock,
       },
     },
   },
