@@ -5,6 +5,10 @@ import SPACING from '../../utilities/spacing';
 import TEXT from '../../utilities/text';
 
 export default StyleSheet.create({
+  wrapper: {
+    position: 'absolute',
+    top: SPACING.medium,
+  },
   background: {
     backgroundColor: COLORS.titleBackground,
     borderWidth: BORDER.width,
@@ -12,8 +16,6 @@ export default StyleSheet.create({
     borderBottomRightRadius: BORDER.radius,
     borderColor: COLORS.black,
     borderLeftWidth: 0,
-    position: 'absolute',
-    top: SPACING.medium,
     height: 40,
     justifyContent: 'center',
     paddingLeft: SPACING.medium,
