@@ -118,7 +118,11 @@ const DetailScreen = ({ route }) => {
       />
       <View style={[STYLES.moreInfoContainer, STYLES.horizontalSpacing]}>
         <Text style={STYLES.text}>For more info visit</Text>
-        <TouchableNativeFeedback onPress={() => { Linking.openURL('https://www.marvel.com/') }}>
+        <TouchableNativeFeedback
+          onPress={() => {
+            Linking.openURL('https://www.marvel.com/');
+          }}
+        >
           <Text style={[STYLES.text, STYLES.link, STYLES.marvelLink]}>marvel.com</Text>
         </TouchableNativeFeedback>
         <Text style={[STYLES.text, STYLES.copyrightText]}>© 2020 MARVEL</Text>
