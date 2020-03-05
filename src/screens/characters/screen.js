@@ -131,19 +131,20 @@ const CharactersScreen = ({ navigation }) => {
                 {(
                   isLoading
                 ) && (
-                  [...Array(characters.length ? 2 : 3)].map((item, index) => (
-                    <View style={STYLES.row} key={index.toString()}>
-                      <CharacterTile
-                        name="Loading"
-                        style={[
-                          STYLES.tile,
-                          STYLES.tileLeft,
-                        ]}
-                      />
-                      <CharacterTile
-                        name="Loading"
-                        style={STYLES.tile}
-                      />
+                  [...Array(characters.length ? 2 : 3)].map(() => (
+                    <View style={STYLES.row} key={Math.random()}>
+                      {
+                        [...Array(2)].map((item, index) => (
+                          <CharacterTile
+                            name="Loading"
+                            key={Math.random()}
+                            style={[
+                              STYLES.tile,
+                              index ? null : STYLES.tileLeft,
+                            ]}
+                          />
+                        ))
+                      }
                     </View>
                   ))
                 )}
