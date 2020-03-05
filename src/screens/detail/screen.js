@@ -132,8 +132,10 @@ const DetailScreen = ({ route }) => {
 };
 
 DetailScreen.propTypes = {
-  route: PropTypes.objectOf({
-    character: PropTypes.object,
+  route: PropTypes.shape({
+    params: PropTypes.shape({
+      character: PropTypes.object.isRequired,
+    }).isRequired,
   }).isRequired,
 };
 
