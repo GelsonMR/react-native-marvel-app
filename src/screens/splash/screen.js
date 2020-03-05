@@ -43,7 +43,7 @@ const SplashScreen = ({ navigation }) => {
 
 SplashScreen.propTypes = {
   navigation: PropTypes.shape({
-    push: PropTypes.func.isRequired,
+    reset: PropTypes.func.isRequired,
   }).isRequired,
 };
 
