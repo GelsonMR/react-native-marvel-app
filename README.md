@@ -43,4 +43,7 @@ After having all the dependencies installed you can check the coverage with the 
 npm test -- --coverage
 ```
 
+## App preview
+
+
 ### Enjoy!
