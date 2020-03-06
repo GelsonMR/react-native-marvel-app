@@ -19,7 +19,7 @@ const SplashScreen = ({ navigation }) => {
         index: 0,
         routes: [{ name: 'Characters' }],
       });
-    }, 4000);
+    }, 3000);
   }, []);
 
   return (
