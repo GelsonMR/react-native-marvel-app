@@ -36,7 +36,7 @@ react-native run-android
 ```
 
 ## Testing
-Jest is the default testing library used, along with Enzyme, which made it much more easier to test the components' output.
+Jest is the default testing library used, along with Enzyme, which made it easier to test the components' output.
 
 After having all the dependencies installed you can check the coverage with the following command:
 ```
