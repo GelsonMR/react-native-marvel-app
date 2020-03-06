@@ -8,7 +8,7 @@ import {
 import { useDebouncedCallback } from 'use-debounce';
 import PropTypes from 'prop-types';
 
-import InputText from '../../components/TextInput';
+import TextInput from '../../components/TextInput';
 import CharacterTile from '../../components/CharacterTile';
 import COLORS from '../../utilities/colors';
 import STYLES from './styles';
@@ -71,12 +71,12 @@ const CharactersScreen = ({ navigation }) => {
         backgroundColor={COLORS.pageBackground}
         barStyle="dark-content"
       />
-      <InputText
+      <TextInput
         placeholder="Search by character name"
         onChangeText={(text) => {
           prepareFetchCharacters(text ? { nameStartsWith: text } : {});
         }}
-        style={STYLES.inputText}
+        style={STYLES.textInput}
       />
       <FlatList
         ref={(ref) => { flatListRef = ref; }}

@@ -10,7 +10,7 @@ export default StyleSheet.create({
     padding: SPACING.medium,
     paddingTop: 136,
   },
-  inputText: {
+  textInput: {
     position: 'absolute',
     top: 72,
     left: SPACING.medium,
