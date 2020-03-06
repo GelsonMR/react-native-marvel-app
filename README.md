@@ -21,8 +21,10 @@ npm install
 
 Then add a `.env` file on the root of the project with the variables:
 
+(You can get your keys at developer.marvel.com)
+
 ```
-ENV=production
+ENV=production or mock
 API_HOST=https://gateway.marvel.com:443/v1/public
 PUBLIC_KEY=***
 PRIVATE_KEY=***
@@ -32,3 +34,5 @@ And run it with:
 ```
 react-native run-android
 ```
+
+Enjoy it!
