@@ -44,6 +44,6 @@ npm test -- --coverage
 ```
 
 ## App preview
-
+![GIF showing app features](app-preview.gif?raw=true)
 
 ### Enjoy!
