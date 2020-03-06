@@ -1,3 +1,4 @@
+[![codecov](https://codecov.io/gh/GelsonMR/react-native-marvel-app/branch/master/graph/badge.svg)](https://codecov.io/gh/GelsonMR/react-native-marvel-app)
 # React Native Marvel App
 A project made to consume Marvel's API.
 
