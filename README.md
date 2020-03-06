@@ -35,4 +35,12 @@ And run it with:
 react-native run-android
 ```
 
-Enjoy!
+## Testing
+Jest is the default testing library used, along with Enzyme, which made it much more easier to test the components' output.
+
+After having all the dependencies installed you can check the coverage with the following command:
+```
+npm test -- --coverage
+```
+
+### Enjoy!
