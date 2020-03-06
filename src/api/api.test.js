@@ -19,4 +19,13 @@ describe('API service tests', () => {
   
     global.Date.now = realDateNow;
   });
+
+  it('generates the service', () => {
+    const spyedGetCharacters = jest.spyOn(api.MARVEL, 'getCharacters')
+    const spyedGetCharacterComics = jest.spyOn(api.MARVEL, 'getCharacterComics')
+    api.MARVEL.getCharacters();
+    api.MARVEL.getCharacterComics({ id: 1 });
+    expect(spyedGetCharacters).toBeCalled();
+    expect(spyedGetCharacterComics).toBeCalled();
+  })
 })
