@@ -35,4 +35,4 @@ And run it with:
 react-native run-android
 ```
 
-Enjoy it!
+Enjoy!
